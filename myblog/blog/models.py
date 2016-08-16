@@ -10,6 +10,9 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+    def __unicode__(self):
+        return u'%s' % self.name
+
 
 class Post(models.Model):
     author = models.ForeignKey(Author)
@@ -20,6 +23,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def __unicode__(self):
+        return u'%s' % self.title
 
     def publish():
         self.published_at = timezone.now()
